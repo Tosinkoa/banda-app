@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ******************** Layout styles ******************/
+
+.layout_layout_bg {
+  @apply text-sm md:text-base relative bg-primary-50 overflow-hidden bottom-0 min-h-[100dvh];
+}
+
+.layout_layout_sec_bg {
+  @apply flex relative w-full h-full;
+}
+
+.layout_overlay {
+  @apply inset-0 z-20 bg-black flex fixed opacity-60;
+}
+
+.layout_children_bg {
+  @apply text-sm md:text-base mt-[50px] md:mt-[90px] lg:w-full lg:ml-auto relative w-full h-[calc(100%_-_50px)] md:h-[calc(100%_-_90px)];
+}
+
+.layout_children_sec_bg {
+  @apply w-full h-full overflow-y-auto py-4 md:py-8;
+}
+
+/* ******************** Sidebar styles ******************/
+
+.sidebar_bg {
+  @apply ease-in-out duration-700 fixed shadow-md text-neutral-700 lg:text-xl text-lg flex-col bg-white md:pt-28 pt-10 top-0 bottom-0 h-full overflow-y-auto z-30 lg:hidden w-[300px] flex;
+}
+
+.sidebar_list_bg {
+  @apply flex h-full w-full flex-col relative py-4 gap-y-0.5;
+}
+
+/* ******************** Navbar styles ******************/
+
+.navbar_bg {
+  @apply md:h-[90px] h-[50px] font-semibold justify-between z-20 w-full flex flex-col fixed bg-inherit;
+}
