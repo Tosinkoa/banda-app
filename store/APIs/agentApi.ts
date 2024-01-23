@@ -4,14 +4,14 @@ export const agentApi = fetcherApi.injectEndpoints({
     return {
       getLoggedAgent: build.query({
         query: () => ({ url: "get-logged-agent" }),
-        providesTags: ["ForAgentProfile"],
+        // providesTags: ["ForAgentProfile"],
       }),
       getAgentProperties: build.query({
         query: () => ({ url: "get-agent-properties" }),
-        providesTags: ["ForAgent"],
+        // providesTags: ["ForAgent"],
       }),
     };
   },
 });
 
-export const { useAddAgentCommentMutation, useGetAgentPropertiesQuery } = agentApi;
+export const { useGetLoggedAgentQuery, useGetAgentPropertiesQuery } = agentApi;

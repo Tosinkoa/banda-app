@@ -21,7 +21,7 @@
 }
 
 .layout_children_sec_bg {
-  @apply w-full h-full overflow-y-auto py-4 md:py-8;
+  @apply w-full h-full overflow-y-auto pt-4 md:pt-8 text-sm md:text-base text-neutral-800;
 }
 
 /* ******************** Sidebar styles ******************/

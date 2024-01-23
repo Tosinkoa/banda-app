@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ["var(--font-montserrat)"],
+      },
       colors: {
         primary: colors.blue,
       },
@@ -18,4 +21,5 @@ const config: Config = {
     require("@tailwindcss/forms")
   ],
 }
+
 export default config

@@ -4,7 +4,7 @@ import Image from "next/legacy/image";
 
 const Banner: React.FC = () => {
   return (
-    <div className="grid md:grid-cols-7 md:grid-rows-2 w-full h-[fit] md:h-[80vh] gap-8">
+    <div className="grid md:grid-cols-7 md:grid-rows-2 w-full h-[fit] md:h-[80vh] gap-8 lg:w-10/12  mx-auto">
       <div className="h-[350px] mx-auto w-[300px] md:w-full md:h-full relative md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-4">
         <div className="absolute inset-0 bg-black bg-opacity-10 z-10 flex flex-col p-7 md:p-8 font-bold text-lg gap-y-3">
           <p className="text-[#2DC071]">5 Items</p>

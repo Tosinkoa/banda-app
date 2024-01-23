@@ -4,7 +4,7 @@ import { FaArrowTrendUp } from "react-icons/fa6";
 
 const Services = () => {
   return (
-    <div className="flex flex-col gap-y-10 md:gap-y-20">
+    <div className="flex flex-col gap-y-10 md:gap-y-20 lg:w-10/12 lg:px-16 my-8 mx-auto">
       <div className="flex flex-col text-center gap-y-1 text-base md:text-lg w-full mx-auto">
         <p className="font-semibold text-neutral-400">Featured Products</p>
         <h3 className="font-bold text-lg md:text-xl">THE BEST SERVICES</h3>

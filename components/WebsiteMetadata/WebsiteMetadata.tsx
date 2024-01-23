@@ -1,6 +1,16 @@
 import Head from "next/head";
+import React, { ReactNode } from "react";
 
-const WebsiteMetadata = ({
+interface WebsiteMetadataProps {
+  title: string;
+  keywords: string;
+  description: string;
+  children: ReactNode;
+  OG_Title_Key: string;
+  OG_Title_Content: string;
+}
+
+const WebsiteMetadata: React.FC<WebsiteMetadataProps> = ({
   title,
   keywords,
   description,

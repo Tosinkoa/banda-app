@@ -3,7 +3,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 
 const Review: React.FC = () => {
   return (
-    <div className="flex flex-col md:flex-row w-full md:gap-x-4 gap-y-10 md:gap-y-0 px-10 md:px-16 justify-between items-center">
+    <div className="flex flex-col md:flex-row w-full md:gap-x-4 gap-y-10 md:gap-y-0 px-10 md:px-16 justify-between items-center lg:w-10/12 my-16 mx-auto">
       <div className="flex flex-col text-center w-fit mx-auto md:mr-auto gap-y-4">
         <h3 className="font-semibold text-lg md:text-2xl">What they say about us</h3>
         <div className="h-20 w-20 rounded-full relative mx-auto">
