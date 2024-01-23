@@ -1,16 +1,17 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { fetcherApi } from "./fectherApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
-import apartmentSlice from "./slices/apartments-slice";
+import { fetcherApi } from "./fectherApi";
+import localStorageDataSlice from "./slices/localstorage-data";
 
 const store = configureStore({
   reducer: {
     [fetcherApi.reducerPath]: fetcherApi.reducer,
-    apartment: apartmentSlice.reducer,
+    localStorageData: localStorageDataSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(fetcherApi.middleware),
 });
+
 setupListeners(store.dispatch);
 
 export default store;

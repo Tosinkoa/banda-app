@@ -13,7 +13,7 @@ const Home: React.FC = () => {
   return (
     <main className="flex flex-col mx-auto">
       <Banner />
-      <BestSellerProducts />
+      <BestSellerProducts showAllDetails={true} />
       <Services />
       <FeaturedPosts />
       <Review />

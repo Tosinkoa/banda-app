@@ -16,7 +16,7 @@
   }
   /* .image-gallery-thumbnail .image-gallery-thumbnail-image {
     @apply rounded-[0.370rem];
-  } */
+} */
   .image-gallery-thumbnail.active,
   .image-gallery-thumbnail:focus {
     @apply border-[2px] p-0 border-primary-600;
@@ -25,4 +25,8 @@
   .image-gallery-right-nav .image-gallery-svg {
     @apply w-12 h-12;
   }
+}
+
+.image-gallery-slide .image-gallery-image {
+  @apply h-[350px] border py-4;
 }

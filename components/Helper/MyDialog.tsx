@@ -27,10 +27,7 @@ export const MyDialog: React.FC<MyDialogProps> = ({
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div
-            onClick={closeModal}
-            className="fixed inset-0 top-[50px] lg:top-[90px] z-30 bg-black bg-opacity-25"
-          />
+          <div onClick={closeModal} className="fixed inset-0 z-30 bg-black bg-opacity-25" />
         </Transition.Child>
         <Transition.Child
           as={Fragment}
@@ -41,7 +38,7 @@ export const MyDialog: React.FC<MyDialogProps> = ({
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          <Dialog.Panel className="flex-col w-full h-[calc(100%_-_50px)]  md:w-10/12 lg:w-2/4 md:h-[75vh] bg-primary-50 md:rounded-md absolute z-30 flex inset-0 m-auto top-[50px]">
+          <Dialog.Panel className="flex-col w-full h-full  md:w-10/12 lg:w-2/4 md:h-[75vh] bg-primary-50 md:rounded-md absolute z-30 flex inset-0 m-auto">
             <div className="font-semibold py-4 h-16 border-b w-11/12 mx-auto inset-0 sticky text-2xl flex items-center justify-between z-10">
               <h4 className="text-lg text-[#23A6F0] md:text-xl text-center">{dialogTitle}</h4>
               <AiOutlineClose
