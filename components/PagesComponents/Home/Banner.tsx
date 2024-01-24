@@ -1,8 +1,7 @@
-import { Inter } from "next/font/google";
-import React from "react";
 import Image from "next/legacy/image";
+import React from "react";
 
-const Banner: React.FC = () => {
+const Banner = () => {
   return (
     <div className="grid md:grid-cols-7 md:grid-rows-2 w-full h-[fit] md:h-[80vh] gap-8 lg:w-10/12  mx-auto">
       <div className="h-[350px] mx-auto w-[300px] md:w-full md:h-full relative md:row-start-1 md:row-end-3 md:col-start-1 md:col-end-4">
@@ -13,7 +12,7 @@ const Banner: React.FC = () => {
         </div>
         <Image
           src="/assets/images/media-bg-cover.png"
-          alt="coconut inside plate"
+          alt=""
           layout="fill"
           objectFit="cover"
         />
@@ -26,7 +25,7 @@ const Banner: React.FC = () => {
         </div>
         <Image
           src="/assets/images/media-bg-cover(1).png"
-          alt="coconut inside plate"
+          alt=""
           layout="fill"
           objectFit="cover"
         />
@@ -39,7 +38,7 @@ const Banner: React.FC = () => {
         </div>
         <Image
           src="/assets/images/media-bg-cover(2).png"
-          alt="coconut inside plate"
+          alt=""
           layout="fill"
           objectFit="cover"
         />
@@ -52,7 +51,7 @@ const Banner: React.FC = () => {
         </div>
         <Image
           src="/assets/images/media-bg-cover(3).png"
-          alt="coconut inside plate"
+          alt=""
           layout="fill"
           objectFit="cover"
         />

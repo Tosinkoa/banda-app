@@ -3,10 +3,10 @@ export const productApi = fetcherApi.injectEndpoints({
   endpoints(build) {
     return {
       getAllProducts: build.query({
-        query: (limit) => ({ url: `products?limit=${limit}` }),
+        query: (limit?: number) => ({ url: `products?limit=${limit}` }),
       }),
       getSingleProduct: build.query({
-        query: (productID) => ({ url: `products/${productID}` }),
+        query: (productID: any) => ({ url: `products/${productID}` }),
       }),
     };
   },

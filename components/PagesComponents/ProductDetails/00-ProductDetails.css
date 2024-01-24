@@ -28,5 +28,5 @@
 }
 
 .image-gallery-slide .image-gallery-image {
-  @apply h-[350px] border py-4;
+  @apply h-[350px] bg-white;
 }

@@ -27,6 +27,7 @@ const Services = () => {
               layout="fill"
               objectFit="cover"
               className="mx-auto"
+              alt="book icon"
             />
           </div>
           <h3 className="font-bold text-lg md:text-xl">Concrete</h3>

@@ -1,23 +1,19 @@
 import Head from "next/head";
-import React, { ReactNode } from "react";
+import { ReactNode } from "react";
+import { IWebsiteMetadata } from "../types";
 
-interface WebsiteMetadataProps {
-  title: string;
-  keywords: string;
-  description: string;
+export interface IMainWebsiteMetadata extends IWebsiteMetadata {
   children: ReactNode;
-  OG_Title_Key: string;
-  OG_Title_Content: string;
 }
 
-const WebsiteMetadata: React.FC<WebsiteMetadataProps> = ({
+const WebsiteMetadata = ({
   title,
   keywords,
   description,
   children,
   OG_Title_Key,
   OG_Title_Content,
-}) => {
+}: IMainWebsiteMetadata) => {
   return (
     <div>
       <Head>
@@ -31,7 +27,6 @@ const WebsiteMetadata: React.FC<WebsiteMetadataProps> = ({
         <meta property="og:description" content="TM Dashboard" />
         <meta name="description" content={description} />
         <meta name="keywords" content={keywords} />
-        {/* <link rel="icon" href="/favicon/favicon.ico" /> */}
       </Head>
       {children}
     </div>

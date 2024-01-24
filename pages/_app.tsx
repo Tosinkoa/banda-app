@@ -5,7 +5,7 @@ import React from "react";
 import { Montserrat } from "next/font/google";
 import { motion } from "framer-motion";
 import { Provider } from "react-redux";
-import store from "@/store/store";
+import { store } from "@/store/store";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -13,7 +13,7 @@ const montserrat = Montserrat({
   variable: "--font-montserrat",
 });
 
-const App: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <motion.div

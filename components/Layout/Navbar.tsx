@@ -8,14 +8,9 @@ import { MdPersonOutline } from "react-icons/md";
 import { TbSearch } from "react-icons/tb";
 import { TfiEmail } from "react-icons/tfi";
 import Cart from "../Cart/Cart";
-import useGetScreenWidth from "../CustomHooks/useGetScreenWidth";
+import useLocalStorageProductDetails from "../CustomHooks/useLocalStorageProductDetails";
 import { MyDialog } from "../Helper/MyDialog";
-import WIshlistProducts from "../SavedProduct/WIshlistProducts";
-import { useSelector } from "react-redux";
-
-interface NavbarProps {
-  smallScreenSidebarHandler: () => void;
-}
+import WIshlist from "../Wishlist/WIshlist";
 
 interface ModalState {
   isCartModalOpen: boolean;
@@ -23,30 +18,15 @@ interface ModalState {
   isShowSmallScreenNavModal: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ smallScreenSidebarHandler }) => {
+const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
-  const [totalCartProductData, setTotalCartProductData] = useState(0);
-  const isAddingCartToLocalStorage = useSelector(
-    (state) => state.localStorageData.addedCartToLocalStorage
-  );
+  const { totalCartProductData, totalWishlistProductData } = useLocalStorageProductDetails();
+  const [showSmallDeviceNavCard, setShowSmallDeviceNavCard] = useState<boolean>(false);
   const [modalState, setModalState] = useState<ModalState>({
     isCartModalOpen: false,
     isWIshlistProductModalOpen: false,
     isShowSmallScreenNavModal: false,
   });
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const cartItems = localStorage.getItem("cart");
-      if (cartItems) {
-        const parsedCartItems = JSON.parse(cartItems);
-        const allCartProductCount = parsedCartItems?.data?.map(
-          (eachCartData) => eachCartData.product_count
-        );
-        setTotalCartProductData(allCartProductCount);
-      }
-    }
-  }, [isAddingCartToLocalStorage]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -73,10 +53,6 @@ const Navbar: React.FC<NavbarProps> = ({ smallScreenSidebarHandler }) => {
   const openWIshlistProductModal = () => toggleModal("isWIshlistProductModalOpen", true);
   const closeWIshlistProductModal = () => toggleModal("isWIshlistProductModalOpen", false);
 
-  // Small Screen Nav Buttons
-  const openSmallScreenNavModal = () => toggleModal("isShowSmallScreenNavModal", true);
-  const closeSmallScreenNavModal = () => toggleModal("isShowSmallScreenNavModal", false);
-
   return (
     <>
       {/* Cart Modal */}
@@ -91,7 +67,7 @@ const Navbar: React.FC<NavbarProps> = ({ smallScreenSidebarHandler }) => {
         closeModal={closeWIshlistProductModal}
         isModalOpen={modalState.isWIshlistProductModalOpen}
         dialogTitle="Wishlist"
-        children={<WIshlistProducts />}
+        children={<WIshlist />}
       />
       {/* Navbar  */}
       <div className={`${isScrolled && "shadow"} navbar_bg`}>
@@ -146,24 +122,39 @@ const Navbar: React.FC<NavbarProps> = ({ smallScreenSidebarHandler }) => {
               <TbSearch className="text-[1.7rem]" />
               <div onClick={openCartModal} className="flex items-center gap-x-1">
                 <BsCart />
-                <p className="text-base font-semibold md:flex hidden">
-                  {totalCartProductData}
-                </p>
+                <p className="text-base font-semibold flex">{totalCartProductData || "0"}</p>
               </div>
               <div
                 onClick={openWIshlistProductModal}
                 className="text-[1.7rem] flex items-center gap-x-1"
               >
                 <IoMdHeartEmpty />
-                <p className="text-base font-semibold md:flex hidden">1</p>
+                <p className="text-base font-semibold flex">
+                  {totalWishlistProductData || "0"}
+                </p>
               </div>
-              <div className="text-3xl flex md:hidden">
-                <BiMenuAltRight onClick={openSmallScreenNavModal} />
+              <div
+                onClick={() => setShowSmallDeviceNavCard(!showSmallDeviceNavCard)}
+                className="text-3xl flex md:hidden"
+              >
+                <BiMenuAltRight />
               </div>
             </div>
           </div>
         </div>
       </div>
+      {showSmallDeviceNavCard && (
+        <div className="h-[280px]  md:hidden text-xl text-center py-8  text fixed md:top-[90px] top-[50px] w-full flex flex-col bg-white z-20">
+          <div className="h-fit flex flex-col gap-y-4 my-auto">
+            <Link href="/#">
+              <p>Home</p>
+            </Link>
+            <Link href="/#">Product</Link>
+            <Link href="/#">Pricing</Link>
+            <Link href="/#">Contact</Link>
+          </div>
+        </div>
+      )}
     </>
   );
 };

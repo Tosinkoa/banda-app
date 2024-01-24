@@ -3,7 +3,7 @@ import { setupListeners } from "@reduxjs/toolkit/query";
 import { fetcherApi } from "./fectherApi";
 import localStorageDataSlice from "./slices/localstorage-data";
 
-const store = configureStore({
+export const store = configureStore({
   reducer: {
     [fetcherApi.reducerPath]: fetcherApi.reducer,
     localStorageData: localStorageDataSlice.reducer,
@@ -14,4 +14,5 @@ const store = configureStore({
 
 setupListeners(store.dispatch);
 
-export default store;
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;

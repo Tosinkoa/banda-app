@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 import { FaRegStar, FaStar } from "react-icons/fa";
 
-const Review: React.FC = () => {
+const Review = () => {
   return (
     <div className="flex flex-col md:flex-row w-full md:gap-x-4 gap-y-10 md:gap-y-0 px-10 md:px-16 justify-between items-center lg:w-10/12 my-16 mx-auto">
       <div className="flex flex-col text-center w-fit mx-auto md:mr-auto gap-y-4">

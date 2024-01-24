@@ -9,12 +9,12 @@ interface MyDialogProps {
   closeModal(): void;
 }
 
-export const MyDialog: React.FC<MyDialogProps> = ({
+export const MyDialog = ({
   dialogTitle,
   children,
   isModalOpen,
   closeModal,
-}) => {
+}: MyDialogProps) => {
   return (
     <Transition appear show={isModalOpen} as={Fragment}>
       <Dialog onClose={() => {}}>

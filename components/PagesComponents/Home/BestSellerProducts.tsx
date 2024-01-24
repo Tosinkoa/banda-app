@@ -1,3 +1,4 @@
+import { IProduct } from "@/components/types";
 import { useGetAllProductsQuery } from "@/store/APIs/productApi";
 import Image from "next/legacy/image";
 import Link from "next/link";
@@ -7,7 +8,7 @@ interface BestSellerProductsProps {
   showAllDetails: boolean;
 }
 
-const BestSellerProducts: React.FC<BestSellerProductsProps> = ({ showAllDetails }) => {
+const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
   const initialLimit = 8;
   const [isAllProductDataFetched, setIsAllProductDataFetched] = useState<boolean>(false);
   const [limit, setLimit] = useState<number>(initialLimit);
@@ -45,7 +46,7 @@ const BestSellerProducts: React.FC<BestSellerProductsProps> = ({ showAllDetails 
       )}
       <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-10">
         {!isLoadingProductData &&
-          productsData?.products?.map((eachProduct) => {
+          productsData?.products?.map((eachProduct: IProduct) => {
             // Calculate the crossed out price using the discount percentage
             const productPriceDeduction =
               (eachProduct.discountPercentage / 100) * eachProduct.price;
