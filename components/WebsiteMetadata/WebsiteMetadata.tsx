@@ -36,10 +36,10 @@ const WebsiteMetadata = ({
 export default WebsiteMetadata;
 
 WebsiteMetadata.defaultProps = {
-  title: "banda",
+  title: "Banda",
   description: "banda Ecommerce website",
   keywords:
     "banda, banda ecommerce, ecommerce bandge, bandge, bange, bangde, ecommerce website, ecommece, ecommerce app",
-  OG_Title_Content: "banda",
-  OG_Title_Key: "banda",
+  OG_Title_Content: "Banda",
+  OG_Title_Key: "Banda",
 };
