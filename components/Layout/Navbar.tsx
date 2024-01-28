@@ -139,8 +139,8 @@ const Navbar = () => {
         </div>
       </div>
       {showSmallDeviceNavCard && (
-        <div className="small_device_nav_bg">
-          <div className="small_device_sec_nav_bg">
+        <div className="h-[280px] shadow-lg rounded-b-lg md:hidden text-xl text-center py-8 fixed md:top-[90px] top-[50px] w-full flex flex-col bg-neutral-50 z-20">
+          <div className="h-fit flex flex-col gap-y-4 my-auto">
             <Link href="/#">
               <p>Home</p>
             </Link>

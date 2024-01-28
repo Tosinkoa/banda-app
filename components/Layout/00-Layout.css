@@ -121,14 +121,6 @@
     .wishlist_icon_bg {
       @apply text-[1.7rem] flex items-center gap-x-1;
     }
-
-    .small_device_nav_bg {
-      @apply h-[280px]  md:hidden text-xl text-center py-8 fixed md:top-[90px] top-[50px] w-full flex flex-col bg-neutral-50 z-20;
-    }
-
-    .small_device_sec_nav_bg {
-      @apply h-fit flex flex-col gap-y-4 my-auto;
-    }
   }
 }
 
