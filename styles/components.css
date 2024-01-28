@@ -1,5 +1,8 @@
 /* components base folder path */
 @import "../components/Layout/00-Layout.css";
+@import "../components/Cart/00-Cart.css";
+@import "../components/Helper/00-Helper.css";
 
 /* Pages component path */
 @import "../components/PagesComponents/ProductDetails/00-ProductDetails.css";
+@import "../components/PagesComponents/Home/00-Home.css";

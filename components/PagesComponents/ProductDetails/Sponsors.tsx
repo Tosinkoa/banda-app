@@ -12,9 +12,9 @@ const Sponsors = () => {
   ];
 
   return (
-    <div className="flex md:mx-auto flex-col md:flex-row items-center lg:gap-x-24 md:gap-x-6 gap-x-0 gap-y-5 md:gap-y-0 my-8">
+    <div className="sponsor_bg">
       {sponsorLogo.map?.((eachSponsorImage, index) => (
-        <div key={index} className="relative h-[5.5rem] w-[5.5rem]">
+        <div key={index} className="sponsor_image">
           <Image
             src={eachSponsorImage}
             alt="sponsor images"

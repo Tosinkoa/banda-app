@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dialog_overlay {
+  @apply fixed inset-0 z-30 bg-black bg-opacity-25;
+}
+
+.dialog_panel {
+  @apply flex-col w-full h-full  md:w-10/12 lg:w-2/4 md:h-[75vh] bg-neutral-50 md:rounded-md absolute z-30 flex inset-0 m-auto;
+}
+
+.dialog_panel_title_bg {
+  @apply font-semibold py-4 h-16 border-b w-11/12 mx-auto inset-0 sticky text-2xl flex items-center justify-between z-10;
+}
+
+.dialog_title {
+  @apply text-lg text-[#23856D] md:text-xl text-center;
+}
+
+.dialog_close_icon {
+  @apply h-fit w-fit text-2xl cursor-pointer;
+}
+
+.dialog_content {
+  @apply w-11/12 mx-auto mt-4 overflow-y-auto px-3 pb-20;
+}

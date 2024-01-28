@@ -124,22 +124,20 @@ const ProductDetailsComp = ({ productID }: ProductDetailsCompProps) => {
   const productDiscountPrice = productData?.price - productPriceDeduction;
 
   return (
-    <div className="flex flex-col lg:w-10/12 w-11/12 mx-auto gap-y-4">
+    <div className="product_details_bg">
       {/* More product details */}
-      {isProductDataLoading && (
-        <div className="animate-spin border border-b-0 h-20 w-20 mx-auto border-neutral-500 rounded-full "></div>
-      )}
+      {isProductDataLoading && <div className="loading_spinner"></div>}
       {!isProductDataLoading && (
-        <div className="mb-8 gap-y-5">
-          <div className="grid md:grid-cols-2">
-            <div className=" lg:max-w-[500px] mx-auto md:mr-auto lg:max-h-[500px] relative lg:w-[400px] lg:h-[400px] w-[90%] max-w-[350px] md:w-[280px] md:h-[280px]">
+        <div className="product_detail_bg">
+          <div className="product_detail_sec_bg">
+            <div className="product_detail_image">
               {/* Navigation buttons */}
-              <div className="h-[40px] mb-4 mx-auto md:ml-0 flex w-fit items-center gap-x-1 font-semibold text-base md:text-xl">
+              <div className="nav_link_bg">
                 <Link href="/" className="hover:border-b" passHref>
                   Home
                 </Link>
-                <IoIosArrowForward className="text-neutral-400" />
-                <span className="text-neutral-400 hover:border-b cursor-pointer">Shop</span>
+                <IoIosArrowForward className="link_arrow" />
+                <span className="shop_link">Shop</span>
               </div>
               {/* Product Image and tumbnails */}
               {transformedImages.length > 0 && !isProductDataLoading && (
@@ -153,54 +151,42 @@ const ProductDetailsComp = ({ productID }: ProductDetailsCompProps) => {
                 </div>
               )}
             </div>
-            <div className="flex flex-col mt-4 md:mt-0 md:gap-y-0 max-w-[500px]">
-              <div className="h-[40px] mb-4"></div>
-              <div className="flex flex-col gap-y-1">
-                <p className="text-lg md:text-xl">{productData?.title}</p>
-                <div className="flex items-center md:text-3xl text-2xl gap-x-1 text-yellow-500">
-                  <i data-star={productData?.rating} className="absolute"></i>
+            <div className="product_full_details">
+              <div className="full_detail_space"></div>
+              <div className="product_info_bg">
+                <p className="product_title">{productData?.title}</p>
+                <div className="product_review_bg">
+                  <i data-star={productData?.rating}></i>
 
-                  <p className="font-semibold text-neutral-700 text-sm md:text-base">
-                    10 Reviews
-                  </p>
+                  <p className="review_text">10 Reviews</p>
                 </div>
-                <p className="font-bold text-lg md:text-xl">
-                  ${productDiscountPrice.toFixed(2)}
-                </p>
-                <div className="flex gap-x-1 font-semibold">
+                <p className="product_price">${productDiscountPrice.toFixed(2)}</p>
+                <div className="product_in_stock_bg">
                   <span>Availability:</span>
-                  <span className="text-[#23A6F0]">In stock</span>
+                  <span className="in_stock">In stock</span>
                 </div>
-                <div className="my-2 md:h-[100px]">
-                  <p className="md:hidden">{productData?.description}</p>
+                <div className="product_decription">
+                  <p className="main_product_decription">{productData?.description}</p>
                 </div>
               </div>
 
-              <div className="flex flex-col gap-y-3">
+              <div className="product_action">
                 <hr />
-                <div className="flex items-center gap-x-2">
-                  <div className="bg-[#23A6F0] md:h-8 md:w-8 h-7 w-7 rounded-full"></div>
-                  <div className="bg-[#2DC071] md:h-8 md:w-8 h-7 w-7 rounded-full"></div>
-                  <div className="bg-[#E77C40] md:h-8 md:w-8 h-7 w-7 rounded-full"></div>
-                  <div className="bg-[#252B42] md:h-8 md:w-8 h-7 w-7 rounded-full"></div>
+                <div className="product_color_bg">
+                  <div className="bg-[#23A6F0] product_color"></div>
+                  <div className="bg-[#2DC071] product_color"></div>
+                  <div className="bg-[#E77C40] product_color"></div>
+                  <div className="bg-[#252B42] product_color"></div>
                 </div>
-                <div className="flex  items-center gap-x-3">
-                  <button className="w-fit md:px-10 md:py-3 px-6 py-2 text-neutral-50 bg-[#23A6F0] rounded-md">
-                    Select Options
-                  </button>
-                  <div
-                    onClick={addProductToLocalStorageWishlist}
-                    className="border border-neutral-300 rounded-full p-2 text-xl md:text-2xl"
-                  >
+                <div className="main_product_action">
+                  <button className="select_option">Select Options</button>
+                  <div onClick={addProductToLocalStorageWishlist} className="action_icon">
                     <IoMdHeartEmpty />
                   </div>
-                  <div
-                    onClick={addProductToLocalStorageCart}
-                    className="border border-neutral-300 rounded-full p-2 text-xl md:text-2xl"
-                  >
+                  <div onClick={addProductToLocalStorageCart} className="action_icon">
                     <BsCart />
                   </div>
-                  <div className="border border-neutral-300 rounded-full p-2 text-xl md:text-2xl">
+                  <div className="action_icon">
                     <IoEye />
                   </div>
                 </div>
@@ -209,10 +195,10 @@ const ProductDetailsComp = ({ productID }: ProductDetailsCompProps) => {
           </div>
         </div>
       )}
-      <div className="hidden md:flex flex-col mt-32">
-        <div className="flex flex-col gap-x-3 my-8 gap-y-5">
-          <div className="font-bold flex border-b py-6 lg:w-10/12 lg:px-16 mx-auto">
-            <div className="flex mx-auto gap-x-5 my-2">
+      <div className="large_screen_product_details">
+        <div className="large_scr_product_bg">
+          <div className="large_scr_detail_tab">
+            <div className="tab_bg">
               <p>Description</p>
               <p>Additional Information</p>
               <div>
@@ -221,7 +207,7 @@ const ProductDetailsComp = ({ productID }: ProductDetailsCompProps) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-2 items-center mx-auto gap-x-8">
+          <div className="more_product_details">
             <div className="flex-col max-w-[500px] gap-y-4 flex">
               <div className="font-semibold text-lg md:text-xl">
                 <span>Brand:</span> <span>{productData?.brand}</span>
@@ -230,7 +216,7 @@ const ProductDetailsComp = ({ productID }: ProductDetailsCompProps) => {
                 {productData?.description}
               </p>
             </div>
-            <div className="relative lg:w-[400px] md:ml-auto lg:max-w-[500px] lg:max-h-[500px] lg:h-[400px] w-[280px] h-[280px] border bg-neutral-100">
+            <div className="product_image_bg">
               <Image
                 src={productData?.images[1] || productData?.images[0]}
                 alt="product description image"

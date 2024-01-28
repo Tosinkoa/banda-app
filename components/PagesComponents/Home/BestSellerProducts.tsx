@@ -27,24 +27,18 @@ const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
   };
 
   return (
-    <div
-      className={`${
-        !showAllDetails && "lg:w-10/12 lg:px-16"
-      } flex flex-col gap-y-4 md:gap-y-8 my-8 mx-auto`}
-    >
+    <div className={`${!showAllDetails && "lg:w-10/12 lg:px-16"} best_seller_bg`}>
       {showAllDetails && (
-        <div className="flex flex-col text-center gap-y-1 text-base md:text-lg w-full mx-auto">
-          <p className="font-semibold text-neutral-400">Featured Products</p>
-          <h3 className="font-bold text-lg md:text-xl">BEST SELLER PRODUCTS</h3>
-          <p className=" text-neutral-400 text-sm">
+        <div className="best_seller_first_title">
+          <p className="featured_products_title">Featured Products</p>
+          <h3 className="best_seller_title">BEST SELLER PRODUCTS</h3>
+          <p className=" best_seller_small_title">
             Problems trying to resolve the conflict between
           </p>
         </div>
       )}
-      {!showAllDetails && (
-        <h3 className="border-b font-bold text-lg lg:text-xl py-4">BEST SELLER PRODUCTS</h3>
-      )}
-      <div className="grid lg:grid-cols-4 md:grid-cols-3 gap-10">
+      {!showAllDetails && <h3 className="best_seller_second_title">BEST SELLER PRODUCTS</h3>}
+      <div className="best_seller_product_list">
         {!isLoadingProductData &&
           productsData?.products?.map((eachProduct: IProduct) => {
             // Calculate the crossed out price using the discount percentage
@@ -57,10 +51,10 @@ const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
                 href={`/product-details/${eachProduct.id}`}
                 passHref
                 key={eachProduct.id}
-                className="flex flex-col place-content-center justify-self-center gap-y-3"
+                className="each_product"
               >
-                <div className="h-fit w-fit p-4 bg-white">
-                  <div className="relative h-[280px] bg-white w-[200px]">
+                <div className="product_image_main_bg">
+                  <div className="product_image">
                     <Image
                       src={eachProduct.images[0]}
                       alt="product image"
@@ -69,12 +63,14 @@ const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
                     />
                   </div>
                 </div>
-                <div className="font-semibold w-full text-center space-y-1">
-                  <p className="w-[200px] line-clamp-1">{eachProduct.title}</p>
-                  <p className="text-neutral-500">{eachProduct.brand}</p>
-                  <p className="font-bold">
-                    <span className="text-neutral-400">${eachProduct.price}</span>{" "}
-                    <span className="text-[#23856D]">${productDiscountPrice.toFixed(2)}</span>
+                <div className="product_detail_bg">
+                  <p className="product_title">{eachProduct.title}</p>
+                  <p className="brand_title">{eachProduct.brand}</p>
+                  <p className="price_bg">
+                    <span className="main_price">${eachProduct.price}</span>{" "}
+                    <span className="main_discount_price">
+                      ${productDiscountPrice.toFixed(2)}
+                    </span>
                   </p>
                 </div>
               </Link>
@@ -85,10 +81,8 @@ const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
         <button
           onClick={moreProductLoader}
           disabled={isAllProductDataFetched}
-          className={`md:text-base text-xs border rounded-md font-semibold w-64 mx-auto py-3 ${
-            isAllProductDataFetched
-              ? "text-blue-200 border-blue-200"
-              : "text-[#23A6F0] border-[#23A6F0]"
+          className={`load_more_button ${
+            isAllProductDataFetched ? "disabled_button" : "active_button"
           }`}
         >
           {isFecthingProductData ? "LOADING PRODUCT...." : "LOAD MORE PRODUCTS"}

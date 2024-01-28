@@ -5,7 +5,7 @@
 /* ******************** Layout styles ******************/
 
 .layout_layout_bg {
-  @apply text-sm md:text-base relative bg-primary-50 overflow-hidden bottom-0 min-h-[100dvh];
+  @apply text-sm md:text-base relative bg-neutral-50 overflow-hidden bottom-0 min-h-[100dvh];
 }
 
 .layout_layout_sec_bg {
@@ -21,13 +21,13 @@
 }
 
 .layout_children_sec_bg {
-  @apply w-full h-full overflow-y-auto pt-4 md:pt-8 text-sm md:text-base text-neutral-800;
+  @apply w-full bg-neutral-50 h-full overflow-y-auto pt-4 md:pt-8 text-sm md:text-base text-neutral-800;
 }
 
 /* ******************** Sidebar styles ******************/
 
 .sidebar_bg {
-  @apply ease-in-out duration-700 fixed shadow-md text-neutral-700 lg:text-xl text-lg flex-col bg-white md:pt-28 pt-10 top-0 bottom-0 h-full overflow-y-auto z-30 lg:hidden w-[300px] flex;
+  @apply ease-in-out duration-700 fixed shadow-md text-neutral-700 lg:text-xl text-lg flex-col bg-neutral-50 md:pt-28 pt-10 top-0 bottom-0 h-full overflow-y-auto z-30 lg:hidden w-[300px] flex;
 }
 
 .sidebar_list_bg {
@@ -38,4 +38,155 @@
 
 .navbar_bg {
   @apply md:h-[90px] h-[50px] font-semibold justify-between z-20 w-full flex flex-col fixed bg-inherit;
+
+  .navbar_detail_bg {
+    @apply font-semibold hidden md:flex text-xs text-neutral-50 px-2 md:px-10 justify-between h-[45%] bg-[#23856D] w-full;
+  }
+
+  .navbar_contact_details {
+    @apply flex items-center gap-0 gap-x-5 lg:gap-x-10;
+  }
+
+  .telephone_bg {
+    @apply flex items-center gap-x-1;
+  }
+
+  .email_bg {
+    @apply flex items-center gap-x-1;
+  }
+
+  .contact_icon {
+    @apply text-lg;
+  }
+
+  .social_bg {
+    @apply flex items-center gap-x-0 lg:gap-x-16;
+
+    p {
+      @apply hidden lg:flex;
+    }
+
+    .social_icon {
+      @apply text-xl;
+    }
+  }
+
+  .navbar_link_bg {
+    @apply flex w-full md:h-[55%] h-full items-center gap-x-4 justify-between px-2 md:px-10;
+
+    .right_links {
+      @apply flex items-center gap-x-20;
+    }
+
+    .right_link_list {
+      @apply md:flex items-center text-sm gap-x-4 hidden;
+    }
+
+    .shop_link_bg {
+      @apply flex items-center gap-x-1;
+    }
+
+    .shop_link_icon {
+      @apply text-xl;
+    }
+  }
+
+  .left_link_bg {
+    @apply flex items-center gap-x-4 text-[#23A6F0];
+
+    .left_link_auth_bg {
+      @apply gap-x-1 md:flex hidden items-center;
+    }
+
+    .left_link_auth_icon {
+      @apply text-2xl;
+    }
+
+    .actions_icons_bg {
+      p {
+        @apply text-base font-semibold flex;
+      }
+
+      @apply flex items-center text-2xl gap-x-3.5 md:gap-x-3;
+    }
+
+    .search_icon {
+      @apply text-[1.7rem];
+    }
+
+    .cart_icon_bg {
+      @apply flex items-center gap-x-1;
+    }
+
+    .wishlist_icon_bg {
+      @apply text-[1.7rem] flex items-center gap-x-1;
+    }
+
+    .small_device_nav_bg {
+      @apply h-[280px]  md:hidden text-xl text-center py-8 fixed md:top-[90px] top-[50px] w-full flex flex-col bg-neutral-50 z-20;
+    }
+
+    .small_device_sec_nav_bg {
+      @apply h-fit flex flex-col gap-y-4 my-auto;
+    }
+  }
+}
+
+/* ******************** Footer styles ******************/
+.footer_bg {
+  .footer_title {
+    @apply bg-neutral-100 flex flex-col md:flex-row gap-y-4 md:justify-between px-5 md:px-20  py-4;
+
+    p {
+      @apply font-bold text-xl md:text-2xl;
+    }
+
+    .title_icon_bg {
+      @apply flex items-center gap-x-3 text-[#23A6F0];
+    }
+
+    .title_icon {
+      @apply text-xl;
+    }
+  }
+
+  .footer_content_bg {
+    @apply grid md:grid-cols-6 gap-4 md:gap-6 p-5 md:px-20;
+
+    .footer_content_child_bg {
+      @apply space-y-2 flex-col;
+    }
+
+    h3 {
+      @apply my-2 font-semibold;
+    }
+
+    p {
+      @apply font-semibold text-neutral-500;
+    }
+  }
+
+  .contact_bg {
+    @apply space-y-2 flex md:col-span-2 flex-col;
+
+    .input_bg {
+      @apply flex;
+    }
+
+    input {
+      @apply md:h-12 h-10 w-full bg-[#FAFAFA] border-neutral-200;
+    }
+
+    button {
+      @apply w-fit mx-auto md:px-4 px-2 py-3 md:h-12 h-10  text-neutral-50 bg-[#23A6F0] rounded-r-md;
+    }
+
+    h4 {
+      @apply text-xs mt-1 font-medium text-neutral-500;
+    }
+  }
+
+  h5 {
+    @apply py-4 p-5 md:px-20 font-semibold text-neutral-600 bg-neutral-100;
+  }
 }

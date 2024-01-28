@@ -71,39 +71,39 @@ const Navbar = () => {
       />
       {/* Navbar  */}
       <div className={`${isScrolled && "shadow"} navbar_bg`}>
-        <div className="font-semibold hidden md:flex text-xs text-neutral-50 px-2 md:px-10 justify-between h-[45%] bg-[#23856D] w-full">
-          <div className="flex items-center gap-0 gap-x-5 lg:gap-x-10">
-            <div className="flex items-center gap-x-1">
-              <BsTelephone className="text-lg" />
+        <div className="navbar_detail_bg">
+          <div className="navbar_contact_details">
+            <div className="telephone_bg">
+              <BsTelephone className="contact_icon" />
               {"(225) 555-0118"}
             </div>
-            <div className="flex items-center gap-x-1">
-              <TfiEmail className="text-lg" />
+            <div className="email_bg">
+              <TfiEmail className="contact_icon" />
               <p>michelle.rivera@example.com</p>
             </div>
           </div>
-          <div className="flex items-center gap-x-0 lg:gap-x-16">
-            <p className="hidden lg:flex">Follow us and get a chance to win 80% off</p>
+          <div className="social_bg">
+            <p>Follow us and get a chance to win 80% off</p>
             <div className="flex items-center gap-x-3">
-              <p className="hidden lg:flex">Follow Us:</p>
-              <FaInstagram className="text-xl" />
-              <FaYoutube className="text-xl" />
-              <FaFacebook className="text-xl" />
-              <FaTwitter className="text-xl" />
+              <p>Follow Us:</p>
+              <FaInstagram className="social_icon" />
+              <FaYoutube className="social_icon" />
+              <FaFacebook className="social_icon" />
+              <FaTwitter className="social_icon" />
             </div>
           </div>
         </div>
-        <div className="flex w-full md:h-[55%] h-full items-center gap-x-4 justify-between px-2 md:px-10">
-          <div className="flex items-center gap-x-20">
+        <div className="navbar_link_bg">
+          <div className="right_links">
             <Link href="/" passHref className="font-bold text-xl">
               Bandage
             </Link>
-            <div className="md:flex items-center text-sm gap-x-4 hidden">
+            <div className="right_link_list">
               <Link href="/#">
                 <p>Home</p>
               </Link>
-              <Link href="/#" className="flex items-center gap-x-1">
-                <span>Shop</span> <IoIosArrowDown className="text-xl" />
+              <Link href="/#" className="shop_link_bg">
+                <span>Shop</span> <IoIosArrowDown className="shop_link_icon" />
               </Link>
               <Link href="/#">About</Link>
               <Link href="/#">Blog</Link>
@@ -111,27 +111,22 @@ const Navbar = () => {
               <Link href="/#">Pages</Link>
             </div>
           </div>
-          <div className="flex items-center gap-x-4 text-[#23A6F0]">
-            <div className="gap-x-1 md:flex hidden items-center">
-              <MdPersonOutline className="text-2xl" />
+          <div className="left_link_bg">
+            <div className="left_link_auth_bg">
+              <MdPersonOutline className="left_link_auth_icon" />
               <Link href="/#">Login</Link>
               <span>/</span>
               <Link href="/#">Register</Link>
             </div>
-            <div className="flex items-center text-2xl gap-x-3.5 md:gap-x-3">
-              <TbSearch className="text-[1.7rem]" />
-              <div onClick={openCartModal} className="flex items-center gap-x-1">
+            <div className="actions_icons_bg">
+              <TbSearch className="search_icon" />
+              <div onClick={openCartModal} className="cart_icon_bg">
                 <BsCart />
-                <p className="text-base font-semibold flex">{totalCartProductData || "0"}</p>
+                <p>{totalCartProductData || "0"}</p>
               </div>
-              <div
-                onClick={openWIshlistProductModal}
-                className="text-[1.7rem] flex items-center gap-x-1"
-              >
+              <div onClick={openWIshlistProductModal} className="wishlist_icon_bg">
                 <IoMdHeartEmpty />
-                <p className="text-base font-semibold flex">
-                  {totalWishlistProductData || "0"}
-                </p>
+                <p>{totalWishlistProductData || "0"}</p>
               </div>
               <div
                 onClick={() => setShowSmallDeviceNavCard(!showSmallDeviceNavCard)}
@@ -144,8 +139,8 @@ const Navbar = () => {
         </div>
       </div>
       {showSmallDeviceNavCard && (
-        <div className="h-[280px]  md:hidden text-xl text-center py-8  text fixed md:top-[90px] top-[50px] w-full flex flex-col bg-white z-20">
-          <div className="h-fit flex flex-col gap-y-4 my-auto">
+        <div className="small_device_nav_bg">
+          <div className="small_device_sec_nav_bg">
             <Link href="/#">
               <p>Home</p>
             </Link>

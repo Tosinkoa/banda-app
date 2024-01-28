@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cart_bg {
+  .cart_first_child_bg {
+    @apply flex flex-col w-full inset-0 lg:px-10 md:gap-x-4 gap-y-4 lg:gap-x-8;
+  }
+
+  .cart_first_sec_bg {
+    @apply col-span-2 flex mx-auto flex-col rounded-md gap-y-3 w-full;
+  }
+
+  .cart_first_third_bg {
+    @apply flex flex-col text-sm space-y-3;
+
+    h4 {
+      @apply font-bold text-sm mt-1;
+    }
+
+    .cart_delivery_icon {
+      @apply text-lg;
+    }
+
+    h3 {
+      @apply font-bold;
+    }
+
+    select {
+      @apply py-2 border-b border-neutral-300 rounded-sm font-semibold;
+    }
+
+    option {
+      @apply border-b-2;
+    }
+  }
+
+  .cart_button {
+    @apply w-full lg:text-base text-xs !bg-[#23856D] rounded-md text-neutral-50 font-semibold text-center py-3;
+  }
+
+  .cart_second_bg {
+    @apply flex flex-col w-full rounded-md gap-y-3 relative mt-4;
+
+    .cart_second_sec_bg {
+      @apply flex flex-col gap-y-3 inset-y-0 my-auto overflow-x-hidden;
+    }
+
+    .cart_product_list_bg {
+      @apply flex flex-row gap-x-4 py-3 border-t border-gray-300  relative;
+    }
+
+    .product_img_bg {
+      @apply block;
+    }
+
+    .product_img {
+      @apply relative h-[150px] w-[120px] flex;
+    }
+
+    .product_img_details {
+      @apply flex flex-col  gap-y-3;
+    }
+
+    .product_price {
+      @apply flex flex-row items-center font-bold gap-x-1.5;
+    }
+
+    .each_product_price {
+      @apply text-xs line-through mb-0.5 text-neutral-500;
+    }
+
+    .product_title {
+      @apply line-clamp-2;
+    }
+
+    .cart_action_buttons {
+      @apply flex gap-x-5 items-center w-44;
+    }
+
+    .action_buttons {
+      @apply flex flex-row items-center gap-x-1 text-xl rounded-md border h-7 place-content-center w-8;
+    }
+
+    .total_bg {
+      @apply space-x-2;
+    }
+
+    .wishlist_button {
+      @apply w-44 flex flex-row items-center gap-x-1 text-sm rounded-md border  place-content-center px-3 py-2;
+    }
+
+    .wishlist_icon {
+      @apply text-lg;
+    }
+
+    .no_product_message {
+      @apply mt-20 mx-auto flex flex-col font-bold text-neutral-600;
+    }
+
+    .no_product_icon {
+      @apply text-5xl mx-auto animate-pulse text-[#23A6F0];
+    }
+  }
+}

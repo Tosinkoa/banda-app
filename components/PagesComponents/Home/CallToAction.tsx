@@ -2,23 +2,21 @@ import Image from "next/legacy/image";
 
 const CallToAction = () => {
   return (
-    <div className="w-full mt-8">
-      <div className="h-[400px] min-w-full w-full relative">
-        <div className="absolute inset-0 bg-black bg-opacity-15 z-10 text-center items-center flex my-auto">
-          <div className="h-fit w-full font-semibold gap-y-4 flex flex-col">
-            <p className="text-blue-400 text-sm">Designing Better Experience</p>
-            <p className="text-2xl md:text-3xl">
+    <div className="call_to_action_bg">
+      <div className="call_to_action_sec_bg">
+        <div className="writeup_bg">
+          <div className="writeup_sec_bg">
+            <p className="writeup_one">Designing Better Experience</p>
+            <p className="writeup_two">
               Problems trying to resolve <br />
               the conflict between
             </p>
-            <p className="font-medium text-xs md:text-sm px-3">
+            <p className="writeup_three">
               Problems trying to resolve the conflict between the two major realms of Classical
               physics:
             </p>
-            <p className="text-green-700 font-bold">$16.48</p>
-            <button className="w-fit mx-auto px-10 py-3 text-neutral-50 bg-[#23A6F0] rounded-md">
-              ADD YOUR CALL TO ACTION
-            </button>
+            <p className="writeup_four">$16.48</p>
+            <button>ADD YOUR CALL TO ACTION</button>
           </div>
         </div>
         <Image
