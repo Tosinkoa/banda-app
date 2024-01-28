@@ -96,7 +96,7 @@ const Navbar = () => {
         <div className="navbar_link_bg">
           <div className="right_links">
             <Link href="/" passHref className="font-bold text-xl">
-              Bandage
+              banda
             </Link>
             <div className="right_link_list">
               <Link href="/#">
