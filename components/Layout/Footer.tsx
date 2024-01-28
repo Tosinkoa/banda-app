@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer_bg">
       <div className="footer_title">
-        <p>banda</p>
+        <p>Banda</p>
         <div className="title_icon_bg">
           <FaFacebook className="title_icon" />
           <FaInstagram className="title_icon" />

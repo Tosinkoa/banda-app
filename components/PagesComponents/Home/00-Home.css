@@ -95,18 +95,6 @@
       .main_discount_price {
         @apply text-[#23856D];
       }
-
-      .load_more_buutton {
-        @apply md:text-base text-xs border rounded-md font-semibold w-64 mx-auto py-3;
-
-        .disabled_button {
-          @apply text-blue-200 border-blue-200;
-        }
-
-        .active_button {
-          @apply text-[#23A6F0] border-[#23A6F0];
-        }
-      }
     }
   }
 }

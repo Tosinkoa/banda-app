@@ -81,8 +81,10 @@ const BestSellerProducts = ({ showAllDetails }: BestSellerProductsProps) => {
         <button
           onClick={moreProductLoader}
           disabled={isAllProductDataFetched}
-          className={`load_more_button ${
-            isAllProductDataFetched ? "disabled_button" : "active_button"
+          className={`md:text-base text-xs border rounded-md font-semibold w-64 mx-auto py-3 ${
+            isAllProductDataFetched
+              ? "text-blue-200 border border-blue-200"
+              : "text-[#23A6F0] border border-[#23A6F0]"
           }`}
         >
           {isFecthingProductData ? "LOADING PRODUCT...." : "LOAD MORE PRODUCTS"}
